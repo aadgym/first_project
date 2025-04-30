@@ -3,7 +3,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello World!")
+    tv_shows_list={"tv_shows":{'Game of Thrones':'9.3','Blacklist': '8','Suits': '8.5','The Witcher': '8.5'}}
+    return render(request,'first_app/index.html',context=tv_shows_list)
 
 def home(request):
     return HttpResponse("Welcome to home page!")
